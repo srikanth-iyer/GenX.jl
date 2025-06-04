@@ -264,6 +264,8 @@ function generate_model(setup::Dict, inputs::Dict, OPTIMIZER::MOI.OptimizerWithA
         JuMP.write_to_file(EP, filepath)
         println("Model Printed")
     end
-
+    filepath = joinpath(pwd(), "YourModel.lp") # NOTE: added a print model thing because the printmodel ==1 part has conflicting instructions in the genx settings file 
+    JuMP.write_to_file(EP, filepath)
+    println("Model Printed")
     return EP
 end
